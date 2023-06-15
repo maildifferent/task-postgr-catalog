@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./pub/css/normalize.css">
+  <link rel="stylesheet" href="./pub/css/index.css">
+</head>
+
+<body>
+  <div class="catalog_container">
+    <div class="catalog_row_top"></div>
+    <div class="catalog_row_main">
+      <div class="catalog_col_side">
+        <div class="catalog_row_filter">
+          {{catalog_filter_container}}
+        </div>
+      </div>
+      <div class="catalog_col_main">
+        <div class="catalog_row_items">
+          {{catalog_items_container}}
+        </div>
+        <div class="catalog_row_pages">
+          {{catalog_pages_container}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./pub/js/index.js"></script>
+</body>
+
+</html>

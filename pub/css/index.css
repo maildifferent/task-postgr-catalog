@@ -1,0 +1,281 @@
+/* https://wismuth.com/webcolors.html */
+/* https://www.w3.org/TR/xml-entity-names/025.html */
+
+/* -------------------------------------------------------------------------- */
+/* Technical. */
+/* -------------------------------------------------------------------------- */
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Init. */
+/* -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Euclid', Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  background-color: lightgrey;
+}
+
+.catalog_container ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.catalog_container summary {
+  list-style: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Catalog container. */
+/* -------------------------------------------------------------------------- */
+div.catalog_container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2rem;
+}
+
+@media screen and (min-width: 1280px) {
+  div.catalog_container {
+    width: 1260px;
+  }
+}
+
+div.catalog_row_main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.catalog_col_side {
+  flex-shrink: 0;
+  width: 250px;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  div.catalog_col_side {
+    width: 274px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  div.catalog_col_side {
+    width: 100%;
+  }
+}
+
+div.catalog_col_main {
+  position: relative;
+  width: calc(100% - 250px);
+}
+
+@media screen and (min-width: 1280px) {
+  div.catalog_col_main {
+    width: calc(100% - 274px);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  div.catalog_col_main {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Catalog filter. */
+/* -------------------------------------------------------------------------- */
+.catalog_row_filter {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  color: dimgrey;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.filter_line_wrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed grey;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Catalog filter tree item bullet points. */
+/* -------------------------------------------------------------------------- */
+.catalog_filter_container ul {
+  padding: 0 0 0 1.1rem;
+}
+
+/* Summary item. */
+/* Plus sign \0002B. */
+/* Minus sign \02212. */
+.catalog_filter_container summary {
+  position: relative;
+  padding-left: 1.1rem;
+  cursor: pointer;
+}
+
+.catalog_filter_container summary::before {
+  content: '\002B';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.catalog_filter_container details[open]>summary::before {
+  content: '\2212';
+}
+
+/* Li item. */
+/* Light vertical and right \0251C. */
+/* Light up and right \02514. */
+.catalog_filter_container details>ul li {
+  position: relative;
+  padding: 0 0 0 1.1rem;
+}
+
+.catalog_filter_container details>ul li::before {
+  content: '\0251C';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% - 1.1rem), 0);
+}
+
+.catalog_filter_container details>ul li:last-child::before {
+  content: '\02514';
+}
+
+/* -------------------------------------------------------------------------- */
+/* Catalog items. */
+/* -------------------------------------------------------------------------- */
+ul.catalog_items_list {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+li.catalog_item_card {
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 544px) {
+  li.catalog_item_card {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  li.catalog_item_card {
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  li.catalog_item_card {
+    width: 25%;
+  }
+}
+
+div.catalog_item_card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: white;
+}
+
+a.catalog_item_link_name,
+a.catalog_item_link_image {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+}
+
+a.catalog_item_link_name {
+  display: block;
+  flex-grow: 1;
+}
+
+div.catalog_item_image_placeholder {
+  position: relative;
+  width: 100%;
+  padding-top: 56.75676%;
+  background-color: antiquewhite;
+  border-radius: 10px 10px 0 0;
+}
+
+img.catalog_item_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+div.catalog_item_content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+div.catalog_item_weight {
+  color: grey;
+  font-size: 0.8rem;
+}
+
+div.catalog_item_price {
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Catalog pages. */
+/* -------------------------------------------------------------------------- */
+div.catalog_row_pages {
+  width: 100%;
+}
+
+ul.catalog_pages_list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+a.catalog_page_link {
+  color: dimgrey;
+  font-size: 1.2rem;
+  display: table-cell;
+  width: 3rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.catalog_page_active {
+  color: black;
+}
+
+a.catalog_page_link:hover:not(.catalog_page_active) {
+  color: mediumseagreen;
+}
